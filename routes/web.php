@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('chenee/{id}',function($id){
+  return "hahah".$id;
+});
+
+Route::get('info','CheneeController@info');
