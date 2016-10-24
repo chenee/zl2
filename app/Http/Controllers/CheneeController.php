@@ -3,7 +3,9 @@ namespace App\Http\Controllers;
 
 Class CheneeController extends Controller
 {
-    public function info(){
-        return "chenee is pig";
+    public function info($id){
+//        return "chenee is pig ".$id;
+        //return view('CheneeInfo');
+        return view('chenee/info',['name'=>'chenee','age'=>18]);
     }
 }

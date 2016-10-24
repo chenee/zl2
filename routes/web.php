@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +18,11 @@ Route::get('chenee/{id}',function($id){
   return "hahah".$id;
 });
 
-Route::get('info','CheneeController@info');
+//Route::get('info','CheneeController@info');
+Route::get('info/{id}',['uses'=>'CheneeController@info']);
+
+//CRUD
+Route::get('user/select','zlController@select');
+Route::get('user/insert','zlController@insert');
+Route::get('user/update','zlController@update');
+Route::get('user/delete','zlController@delete');
