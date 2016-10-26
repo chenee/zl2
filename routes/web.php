@@ -30,4 +30,8 @@ Route::get('user/mongo2','mongoController@mongo2');
 Route::get('services','servicesController@main');
 Route::get('services/new','servicesController@new');
 Route::get('services/electronic','servicesController@electronic');
+Route::post('services/electronic','servicesController@new_electronic');
+//register
+Route::get('register/normal','registerController@normal');
+Route::post('register/normal','registerController@new_normal');
 

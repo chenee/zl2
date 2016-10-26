@@ -16,39 +16,34 @@
 
 <body>
 <div class="content">
-    <div class="links">
-        <a href="/services">services</a>
-        <a href="/register">register</a>
-        <a href="/mine/projectlist">project list</a>
-        <a href="/mine/editprofile">edit profile</a>
-    </div>
+
 
     <!--分类-->
     <div class="nlt new" style="height: 4px"><h4></h4></div>
     <ul class="type p_box">
-        <li><a href="services/electronic" class="react"> <img
-                        src="static/3.png">
+        <li><a href="/services/electronic" class="react"> <img
+                        src="/static/3.png">
 
                 <p>电子</p></a></li>
-        <li><a href="http://www.baidu.com" class="react"> <img src="static/3.png">
+        <li><a href="http://www.baidu.com" class="react"> <img src="/static/3.png">
 
                 <p>ID/MD</p></a></li>
-        <li><a href="http://www.baidu.com" class="react"> <img src="static/3.png">
+        <li><a href="http://www.baidu.com" class="react"> <img src="/static/3.png">
 
                 <p>模塑</p></a></li>
-        <li><a href="http://www.baidu.com" class="react"> <img src="static/3.png">
+        <li><a href="http://www.baidu.com" class="react"> <img src="/static/3.png">
 
                 <p>PCB/FP</p></a></li>
-        <li><a href="http://www.baidu.com" class="react"> <img src="static/3.png">
+        <li><a href="http://www.baidu.com" class="react"> <img src="/static/3.png">
 
                 <p>SMT</p></a></li>
-        <li><a href="http://www.baidu.com" class="react"> <img src="static/3.png">
+        <li><a href="http://www.baidu.com" class="react"> <img src="/static/3.png">
 
                 <p>包装</p></a></li>
-        <li><a href="http://www.baidu.com" class="react"> <img src="static/3.png">
+        <li><a href="http://www.baidu.com" class="react"> <img src="/static/3.png">
 
                 <p>EMS</p></a></li>
-        <li><a href="http://www.baidu.com" class="react"> <img src="static/3.png">
+        <li><a href="http://www.baidu.com" class="react"> <img src="/static/3.png">
 
                 <p>定制化服务</p></a></li>
     </ul>

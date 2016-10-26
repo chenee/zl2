@@ -9,18 +9,16 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
-    <title>E2P</title>
-    <link rel="stylesheet" href="/static/build_index_o2o.min.css">
-    <link href="/static/wap-stylev2.css" rel="stylesheet" type="text/css">
+    <title>服务号</title>
 </head>
 
 <body>
 <div class="content">
     <div class="links">
-        <a href="/services">services</a>
-        <a href="/register">register</a>
-        <a href="/mine/projectlist">projectlist</a>
-        <a href="/mine/editprofile">editprofile</a>
+        <a href="/services"><h6>services</h6></a>
+        <h6><a href="/register/normal">register normal</a> <a href="/register/vip">register VIP</a> </h6>
+        <a href="/mine/projectlist"><h6>projectlist</h6></a>
+        <a href="/mine/editprofile"><h6>editprofile</h6></a><br/>
     </div>
 </div>
 </body>
