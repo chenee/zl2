@@ -1,0 +1,78 @@
+{
+  "_id": "532362819d8d3fc02800002b",
+  "id": 10001,
+  "createDate": 1394827905000,
+  "info": {
+    "name": "chenee",
+    "sex": "男",
+    "emai": "19841433@qq.com",
+    "birthday": "1981-01-29",
+    "cellphone": "15357948701",
+    "company_name": "HHCN",
+    "company_address": "合肥高新区",
+    "experience": "个人经历",
+    "product_info": "产品信息....",
+    "source_info": "所缺资源信息"
+  },
+  "wx": {
+    "openid": "o2lTjv0WAn22OKUzGubwXQslo_tU",
+    "nick_name": "A.C.EE",
+    "headimgurl": "http://wx.qlogo.cn/mmopen/PiajxSqBRaEJkiakVSmlhVdG."
+  },
+  "vip": "true",
+  "orders": [
+    {
+      "id": "order000001",
+      "type": "electronic",
+      "status": "提交需求",
+      "detail": {
+        "器件名称": "aaa;版本;cc;",
+        "需求数量": 192,
+        "交期": "2016-10-25",
+      },
+      "pay": {
+        "state": 1,
+        "history": [
+          {
+            "name": "基本需求付款",
+            "cash": 999,
+            "payed": true
+          },
+          {
+            "name": "升级付款9999",
+            "cash": 999900,
+            "payed": true
+          },
+          {
+            "name": "VIP付款19999",
+            "cash": 1999900,
+            "payed": false
+          }
+        ]
+      },
+      "沟通": [
+        {
+          "from": "客户",
+          "time": "2016-10-10 13:23",
+          "msg": "请问什么时候可以完成?"
+        },
+        {
+          "from": "平台",
+          "time": "2016-10-10 14:23",
+          "msg": "您好:预计2天"
+        },
+        {
+          "from": "平台",
+          "time": "2016-10-10 14:25",
+          "msg": "您好:需要补交费用9999"
+        }
+      ]
+    },
+    //2nd order
+    {
+      "id": "order00000122",
+      "type": "定制化服务",
+      "status": "完成"
+    }
+  ]
+}

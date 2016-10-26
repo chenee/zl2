@@ -11,15 +11,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
-Route::get('chenee/{id}',function($id){
-  return "hahah".$id;
-});
-
-//Route::get('info','CheneeController@info');
-Route::get('info/{id}',['uses'=>'CheneeController@info']);
 
 //mysql CRUD
 Route::get('user/select','zlController@select');
@@ -27,12 +21,13 @@ Route::get('user/insert','zlController@insert');
 Route::get('user/update','zlController@update');
 Route::get('user/delete','zlController@delete');
 
-Route::get('user/mongo1','zlController@mongo1');
-Route::get('user/mongo2','zlController@mongo2');
 
+//mongo
+Route::get('user/mongo1','mongoController@mongo1');
+Route::get('user/mongo2','mongoController@mongo2');
 
 //services
 Route::get('services','servicesController@main');
+Route::get('services/new','servicesController@new');
 Route::get('services/electronic','servicesController@electronic');
 
-//mongo

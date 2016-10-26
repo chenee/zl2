@@ -78,7 +78,15 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-
+        'mongo' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '270127'),
+            'database' => env('DB_DATABASE', 'test'),
+            'username' => env('DB_USERNAME', 'chenee'),
+            'password' => env('DB_PASSWORD', 'chenee'),
+            'prefix' => '',
+        ],
     ],
 
     /*

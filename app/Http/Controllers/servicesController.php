@@ -9,8 +9,9 @@ Class servicesController extends Controller
 {
 
     public  function main(){
-        return view('services/main');
+        return view('services/services');
     }
+
     public  function electronic(){
        return 'electronic';
     }

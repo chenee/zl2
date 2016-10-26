@@ -16,6 +16,13 @@
 
 <body>
 <div class="content">
+    <div class="links">
+        <a href="/services">services</a>
+        <a href="/register">register</a>
+        <a href="/mine/projectlist">project list</a>
+        <a href="/mine/editprofile">edit profile</a>
+    </div>
+
     <!--分类-->
     <div class="nlt new" style="height: 4px"><h4></h4></div>
     <ul class="type p_box">
