@@ -38,3 +38,5 @@ Route::post('register/normal','registerController@new_normal');
 Route::get('register/vip','registerController@vip');
 Route::post('register/vip','registerController@new_vip');
 
+Route::get('projectlist','projectlistController@show');
+

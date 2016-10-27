@@ -52,7 +52,6 @@ Class servicesController extends Controller
                     "time" => date('Y-m-d',time()),
                     "msg" => "我提了一个需求,请提供服务?",
                 ),
-
             ),
         );
 

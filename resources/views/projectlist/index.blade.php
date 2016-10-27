@@ -9,17 +9,28 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
-    <title>服务号</title>
+    <title>project list</title>
+    <link rel="stylesheet" href="/static/build_index_o2o.min.css">
+    <link href="/static/wap-stylev2.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 <div class="content">
-    <div class="links">
-        <a href="/services"><h6>services</h6></a>
-        <h6><a href="/register/normal">register normal</a> <a href="/register/vip">register VIP</a> </h6>
-        <a href="/projectlist"><h6>projectlist</h6></a>
-        <a href="/editprofile"><h6>editprofile</h6></a><br/>
-    </div>
+
+
+    <!--分类-->
+    <div class="nlt new" style="height: 4px"><h4></h4></div>
+    <ul class="type">
+
+        @foreach($lists as $list)
+            <li>
+                <div>wx_openid:{{$list->wx_openid}}</div>
+                @foreach($list->pay->history as $p)
+                    <div>pay:{{$p->name}}</div>
+                @endforeach
+            </li><p/>
+        @endforeach
+    </ul>
 </div>
 </body>
 </html>
