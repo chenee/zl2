@@ -35,3 +35,6 @@ Route::post('services/electronic','servicesController@new_electronic');
 Route::get('register/normal','registerController@normal');
 Route::post('register/normal','registerController@new_normal');
 
+Route::get('register/vip','registerController@vip');
+Route::post('register/vip','registerController@new_vip');
+

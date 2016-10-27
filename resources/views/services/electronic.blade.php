@@ -51,17 +51,9 @@ if(empty($_REQUEST["wx_openid"])){
                                 {{ csrf_field() }}
                                         <!-- Registration form starts -->
                                 <input type="hidden" name="wx_openid" value=<?php echo "wxidchenee123456"//$_REQUEST["wx_openid"] ?> />
-                                <!-- Project Name-->
-                                <div class="form-group">
-                                    <label class="control-label col-lg-3" for="project_name">项目名称</label>
-
-                                    <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="product_name" name="project_name">
-                                    </div>
-                                </div>
                                 <!-- 物流需求-->
                                 <div class="form-group">
-                                    <label class="control-label col-lg-3" for="requirement">物流需求</label>
+                                    <label class="control-label col-lg-3" for="requirement">需求型号</label>
 
                                     <div class="col-lg-9">
                                         <input type="text" class="form-control" id="requirement" name="requirement">
@@ -75,44 +67,6 @@ if(empty($_REQUEST["wx_openid"])){
                                         <input type="text" class="form-control" id="number" name="number">
                                     </div>
                                 </div>
-                                <!-- 求料时间-->
-                                <div class="form-group">
-                                    <label class="control-label col-lg-3" for="requiretime">求料时间</label>
-
-                                    <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="requirtime" name="requiretime">
-                                    </div>
-                                </div>
-                                <!-- 当前进度-->
-                                <div class="form-group">
-                                    <label class="control-label col-lg-3" for="current">当前进度</label>
-
-                                    <div class="col-lg-9">
-                                        <select class="form-control" id="current" name="current">
-                                            <option value="">&nbsp;</option>
-                                            <option value="研发阶段">研发阶段</option>
-                                            <option value="样机阶段">样机阶段</option>
-                                            <option value="小批阶段">小批阶段</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- 下一阶段时间-->
-                                <div class="form-group">
-                                    <label class="control-label col-lg-3" for="nexttime">下一阶段时间</label>
-
-                                    <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="nexttime" name="nexttime">
-                                    </div>
-                                </div>
-                                <!-- 上市时间-->
-                                <div class="form-group">
-                                    <label class="control-label col-lg-3" for="endtime">上市时间</label>
-
-                                    <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="endtime" name="endtime">
-                                    </div>
-                                </div>
-
                                 <!-- Accept box and button s-->
                                 <div class="form-group">
                                     <div class="col-lg-9 col-lg-offset-3">
