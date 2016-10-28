@@ -62,4 +62,13 @@ Class servicesController extends Controller
 //        return view('services/services');
     }
 
+    public function pcb()
+    {
+        return view('services/pcb');
+    }
+    public function new_pcb()
+    {
+        return view('services/pcb');
+    }
+
 }

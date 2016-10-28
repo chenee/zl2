@@ -21,11 +21,6 @@ Route::get('user/insert','zlController@insert');
 Route::get('user/update','zlController@update');
 Route::get('user/delete','zlController@delete');
 
-
-//mongo
-Route::get('user/mongo1','mongoController@mongo1');
-Route::get('user/mongo2','mongoController@mongo2');
-
 //services
 Route::get('services','servicesController@main');
 Route::get('services/new','servicesController@new');
