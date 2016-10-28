@@ -11,7 +11,7 @@ Class wxController extends Controller
 
     public function getinfo()
     {
-        $redirect_url = urlencode("http://zl2.chenee.cn/zl/wxinfo");
+        $redirect_url = urlencode("http://zl2.chenee.cn/wxinfo");
 //        $scope = snsapi_base;
         $scope = "snsapi_userinfo";
 
