@@ -2,15 +2,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use MongoDB\Driver;
 use MongoClient;
 
 Class servicesController extends Controller
 {
 
-    public function main()
+    public function main(Request $request)
     {
+        //judge session ,then jump back
+
+        wxController::checkWxInfo();
+
         return view('services/services');
     }
 
@@ -32,7 +36,7 @@ Class servicesController extends Controller
 
         //insert or update
         $document = array(
-            "wx_openid" => $request->input('wx_openid'),
+            "wx_openid" => session('wx_openid'),
             "requirement" => $request->input('requirement'),
             "number" => $request->input('number'),
 

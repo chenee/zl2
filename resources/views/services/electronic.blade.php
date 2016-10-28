@@ -26,14 +26,6 @@
         </ul>
     </div>
 @endif
-<?php
-if(empty($_REQUEST["wx_openid"])){
-    echo "<h4> 未取得微信信息 </h4>";
-    //exit;
-} else{
-//    echo "<h4>". $_REQUEST['wx_openid'] . " </h4>";
-}
-?>
 <body>
 <div class="admin-form">
     <div class="container">
@@ -50,7 +42,6 @@ if(empty($_REQUEST["wx_openid"])){
                             <form action="/services/electronic" method="POST" class="form-horizontal">
                                 {{ csrf_field() }}
                                         <!-- Registration form starts -->
-                                <input type="hidden" name="wx_openid" value=<?php echo "wxidchenee123456"//$_REQUEST["wx_openid"] ?> />
                                 <!-- 物流需求-->
                                 <div class="form-group">
                                     <label class="control-label col-lg-3" for="requirement">需求型号</label>

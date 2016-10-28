@@ -9,8 +9,26 @@ Class wxController extends Controller
     private $appid = "wx9756628d86fa20fc";
     private $appsecret = "aa4c2500bcfa15901ed6915a5201a15a";
 
-    public function getinfo()
+    static function checkWxInfo()
     {
+        $wx_openid = session('wx_openid');
+
+        if(! isset($wx_openid)){
+            //echo "wx_openid not set";
+            (new wxController())->getinfo('services');
+        }
+    }
+
+    static function cleanWxInfo(Request $request)
+    {
+        $request->session()->forget('wx_openid');
+        $request->session()->forget('wx_nickname');
+        $request->session()->forget('wx_headimgurl');
+    }
+
+    public function getinfo($next)
+    {
+        //$redirect_url = urlencode("http://zl2.chenee.cn/wxinfo?$next");
         $redirect_url = urlencode("http://zl2.chenee.cn/wxinfo");
 //        $scope = snsapi_base;
         $scope = "snsapi_userinfo";
@@ -42,8 +60,8 @@ Class wxController extends Controller
     {
 
         $code = $request->input('code');
+//        $next = $request->input('next');
 
-//$url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' + $appid + '&secret='+ $appsecret + '&code='+ $code +'&grant_type=authorization_code';
         $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=$this->appid&secret=$this->appsecret&code=$code&grant_type=authorization_code";
 
 
@@ -55,14 +73,26 @@ Class wxController extends Controller
                 $url2 = "https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&openid=$openid&lang=zh_CN";
 
                 $ret = $this->httpGet($url2);
-                echo var_dump($ret);
+//                echo var_dump($ret);
 
                 $wxinfo = json_decode($ret);
-                //echo "<img src=$wxinfo->headimgurl>";
+
+
+                session(['wx_openid' => $wxinfo->wx_openid]);
+                session(['wx_nickname' => $wxinfo->wx_nickname]);
+                session(['wx_headimgurl' => $wxinfo->wx_headimgurl]);
+
+//                return view("$next", ['wxinfo' => $wxinfo]);
+                return view('main');
             }
 
         } else {
-            echo "<h1>access_token is null!!</h1>";//debug
+            $request->session()->forget('wx_openid');
+            $request->session()->forget('wx_nickname');
+            $request->session()->forget('wx_headimgurl');
+
+            return "<h1>access_token is null!!</h1>";//debug
+
         }
 
     }

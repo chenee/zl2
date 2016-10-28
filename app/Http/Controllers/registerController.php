@@ -21,10 +21,10 @@ Class registerController extends Controller
         $db = $m->zl;
         $collection = $db->user;
         $document = array(
-            "wx_openid" => $request->input('wx_openid'),
+            "wx_openid" => session('wx_openid'),
 
-            "wx_nickname" => $request->input("wx_nickname"),
-            "wx_headimgurl" => $request->input("wx_headimgurl"),
+            "wx_nickname" => session('wx_nickname'),
+            "wx_headimgurl" => session('wx_headimgurl'),
 
             "name" => $request->input("name"),
             "sex" => $request->input("sex"),
@@ -52,7 +52,7 @@ Class registerController extends Controller
         $db = $m->zl;
         $collection = $db->user;
 
-        $item = $collection->findOne(array('wx_openid'=> $request->input('wx_openid')));
+        $item = $collection->findOne(array('wx_openid'=> session('wx_openid')));
 
         return view('register/profile',['item'=>$item]);
     }
@@ -64,10 +64,6 @@ Class registerController extends Controller
         $collection = $db->user;
 
         $document = array(
-//            "wx_openid" => $request->input('wx_openid'),
-//            "wx_nickname" => $request->input("wx_nickname"),
-//            "wx_headimgurl" => $request->input("wx_headimgurl"),
-//            "register_time" => time()
 
             "name" => $request->input("name"),
             "sex" => $request->input("sex"),
