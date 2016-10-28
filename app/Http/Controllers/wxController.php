@@ -66,7 +66,6 @@ Class wxController extends Controller
 
 
         $res = json_decode($this->httpGet($url));
-        echo "".var_dump($res);
         $access_token = $res->access_token;
         if ($access_token) {
             $openid = $res->openid;
@@ -74,15 +73,13 @@ Class wxController extends Controller
                 $url2 = "https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&openid=$openid&lang=zh_CN";
 
                 $ret = $this->httpGet($url2);
-                echo var_dump($ret);
 
                 $wxinfo = json_decode($ret);
-                echo var_dump($wxinfo);
 
 
-                session(['wx_openid' => $wxinfo->wx_openid]);
-                session(['wx_nickname' => $wxinfo->wx_nickname]);
-                session(['wx_headimgurl' => $wxinfo->wx_headimgurl]);
+                session(['wx_openid' => $wxinfo->openid]);
+                session(['wx_nickname' => $wxinfo->nickname]);
+                session(['wx_headimgurl' => $wxinfo->headimgurl]);
 
 //                return view("$next", ['wxinfo' => $wxinfo]);
                 return view('main');
