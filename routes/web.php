@@ -45,5 +45,6 @@ Route::post('detail/communication','projectlistController@new_detail');
 
 //wx
 Route::get('wx','wxController@getinfo');
+Route::get('wxinfo','wxController@wxinfo');
 
 
