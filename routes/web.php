@@ -43,4 +43,7 @@ Route::get('projectlist/{id}','projectlistController@detail');
 
 Route::post('detail/communication','projectlistController@new_detail');
 
+//wx
+Route::get('wx','wxController@getinfo');
+
 

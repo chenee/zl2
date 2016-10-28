@@ -15,6 +15,7 @@
 <body>
 <div class="content">
     <div class="links">
+        <a href="/wx"><h6>wx_info</h6></a>
         <a href="/services"><h6>services</h6></a>
         <h6><a href="/register/normal">register normal</a> <a href="/register/vip">register VIP</a> </h6>
         <a href="/projectlist"><h6>projectlist</h6></a>
