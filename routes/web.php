@@ -15,36 +15,40 @@ Route::get('/', function () {
 });
 
 
-//mysql CRUD
-Route::get('user/select','zlController@select');
-Route::get('user/insert','zlController@insert');
-Route::get('user/update','zlController@update');
-Route::get('user/delete','zlController@delete');
+////mysql CRUD
+//Route::get('user/select','zlController@select');
+//Route::get('user/insert','zlController@insert');
+//Route::get('user/update','zlController@update');
+//Route::get('user/delete','zlController@delete');
 
+Route::group(['middleware' => 'checkwx'], function () {
 //services
-Route::get('services','servicesController@main');
-Route::get('services/new','servicesController@new');
-Route::get('services/electronic','servicesController@electronic');
-Route::post('services/electronic','servicesController@new_electronic');
+    Route::get('services', 'servicesController@main');
+
+    Route::get('services/new', 'servicesController@new');
+    Route::get('services/electronic', 'servicesController@electronic');
+    Route::post('services/electronic', 'servicesController@new_electronic');
 
 //register
-Route::get('register/normal','registerController@normal');
-Route::post('register/normal','registerController@new_normal');
+    Route::get('register/normal', 'registerController@normal');
+    Route::post('register/normal', 'registerController@new_normal');
 
-Route::get('register/vip','registerController@vip');
-Route::post('register/vip','registerController@new_vip');
+    Route::get('register/vip', 'registerController@vip');
+    Route::post('register/vip', 'registerController@new_vip');
 
-Route::get('editprofile','registerController@profile');
-Route::post('editprofile','registerController@new_profile');
+    Route::get('editprofile', 'registerController@profile');
+    Route::post('editprofile', 'registerController@new_profile');
 
 //project list
-Route::get('projectlist','projectlistController@show');
-Route::get('projectlist/{id}','projectlistController@detail');
+    Route::get('projectlist', 'projectlistController@show');
+    Route::get('projectlist/{id}', 'projectlistController@detail');
 
-Route::post('detail/communication','projectlistController@new_detail');
+    Route::post('detail/communication', 'projectlistController@new_detail');
+});
 
 //wx
-Route::get('wx','wxController@getinfo');
-Route::get('wxinfo','wxController@wxinfo');
+Route::get('wx', 'wxController@getinfo');
+Route::get('wxinfo', 'wxController@wxinfo');
+
 
 

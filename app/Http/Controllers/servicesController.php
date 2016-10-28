@@ -13,8 +13,6 @@ Class servicesController extends Controller
     {
         //judge session ,then jump back
 
-        wxController::checkWxInfo();
-
         return view('services/services');
     }
 
