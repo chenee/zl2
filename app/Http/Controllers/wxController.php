@@ -66,6 +66,7 @@ Class wxController extends Controller
 
 
         $res = json_decode($this->httpGet($url));
+        echo "".var_dump($res);
         $access_token = $res->access_token;
         if ($access_token) {
             $openid = $res->openid;
@@ -73,9 +74,10 @@ Class wxController extends Controller
                 $url2 = "https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&openid=$openid&lang=zh_CN";
 
                 $ret = $this->httpGet($url2);
-//                echo var_dump($ret);
+                echo var_dump($ret);
 
                 $wxinfo = json_decode($ret);
+                echo var_dump($wxinfo);
 
 
                 session(['wx_openid' => $wxinfo->wx_openid]);
@@ -87,9 +89,11 @@ Class wxController extends Controller
             }
 
         } else {
-            $request->session()->forget('wx_openid');
-            $request->session()->forget('wx_nickname');
-            $request->session()->forget('wx_headimgurl');
+//            $request->session()->forget('wx_openid');
+//            $request->session()->forget('wx_nickname');
+//            $request->session()->forget('wx_headimgurl');
+
+            $this->cleanWxInfo($request);
 
             return "<h1>access_token is null!!</h1>";//debug
 
