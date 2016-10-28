@@ -15,7 +15,7 @@ Class projectlistController extends Controller
         $collection = $db->orders;
 
 
-        $cursor = $collection->find(array('wx_openid'=>'wxidchenee123456'));
+        $cursor = $collection->find(array('wx_openid'=> session('wx_openid')));
 
         // 迭代显示文档标题
 
