@@ -31,6 +31,7 @@ Route::get('services','servicesController@main');
 Route::get('services/new','servicesController@new');
 Route::get('services/electronic','servicesController@electronic');
 Route::post('services/electronic','servicesController@new_electronic');
+
 //register
 Route::get('register/normal','registerController@normal');
 Route::post('register/normal','registerController@new_normal');
@@ -38,5 +39,13 @@ Route::post('register/normal','registerController@new_normal');
 Route::get('register/vip','registerController@vip');
 Route::post('register/vip','registerController@new_vip');
 
+Route::get('editprofile','registerController@profile');
+Route::post('editprofile','registerController@new_profile');
+
+//project list
 Route::get('projectlist','projectlistController@show');
+Route::get('projectlist/{id}','projectlistController@detail');
+
+Route::post('detail/communication','projectlistController@new_detail');
+
 

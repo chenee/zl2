@@ -19,8 +19,8 @@
 
 
     <!--分类-->
-    <div class="nlt new" style="height: 4px"><h4></h4></div>
-    <ul class="type">
+    <div class="" style="height: 4px"><h4></h4></div>
+    <ul class="new">
 
         @foreach($lists as $list)
             <li>
@@ -28,6 +28,7 @@
                 @foreach($list->pay->history as $p)
                     <div>pay:{{$p->name}}</div>
                 @endforeach
+                <div>url:<a href="/projectlist/{{$list->_id->{'$id'} }}">查看详情</a></div>
             </li><p/>
         @endforeach
     </ul>

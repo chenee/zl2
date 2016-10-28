@@ -33,18 +33,18 @@
                     <div class="widget-content">
                         <div class="padd">
 
-                            <form action="/register/normal" method="POST" class="form-horizontal">
+                            <form action="/editprofile" method="POST" class="form-horizontal">
                                 {{ csrf_field() }}
                                 <!-- Registration form starts -->
                                 <!-- Name -->
-                                <input type="hidden" name="wx_openid" value=<?php echo "wxidchenee123456"//$_REQUEST["wx_openid"] ?> />
-                                <input type="hidden" name="wx_nickname" value=<?php echo "nicknamechenee"//$wxinfo->nickname ?> />
-                                <input type="hidden" name="wx_headimgurl" value=<?php echo "headimgurlhttp://123.com/1.png"//$wxinfo->headimgurl ?> />
+                                <input type="hidden" name="wx_openid" value={{$item['wx_openid']}} />
+                                <input type="hidden" name="wx_nickname" value={{$item['wx_nickname']}} />
+                                <input type="hidden" name="wx_headimgurl" value={{$item['wx_headimgurl']}} />
                                 <div class="form-group">
                                     <label class="control-label col-lg-3" for="name">姓名</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="name" name="name">
+                                        <input type="text" class="form-control" id="name" name="name" value={{$item['name'] }}>
                                     </div>
                                 </div>
                                 <!-- Sex-->
@@ -54,13 +54,13 @@
                                         <div class="col-md-4">
                                             <div class="col-lg-6">
                                                 <div class="radio">
-                                                    <label><input checked id="optionsRadios2" name="sex" type="radio" value=1>男</label>
+                                                    <label><input <?php if($item['sex']){echo "checked";} ?> id="optionsRadios2" name="sex" type="radio" value=1>男</label>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6">
                                                 <div class="radio">
-                                                    <label><input id="optionsRadios1" name="sex" type="radio" value=0>女</label>
+                                                    <label><input  <?php if( ! $item['sex']){echo "checked";} ?> id="optionsRadios1" name="sex" type="radio" value=0>女</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -76,7 +76,11 @@
                                             <?php
                                             $years = range(2020, 1900);
                                             foreach ($years as $yr) {
-                                                echo '<option value='.$yr.'>'.$yr.'</option>';
+                                                if($yr == $item['birthday']) {
+                                                    echo '<option selected value='.$yr.'>'.$yr.'</option>';
+                                                }else{
+                                                    echo '<option value='.$yr.'>'.$yr.'</option>';
+                                                }
                                             }
 
                                             ?>
@@ -88,7 +92,7 @@
                                     <label class="control-label col-lg-3" for="cellphone">电话号码</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="cellphone" name="cellphone">
+                                        <input type="text" class="form-control" id="cellphone" name="cellphone" value={{$item['cellphone'] }}>
                                     </div>
                                 </div>
                                 <!-- Email -->
@@ -96,7 +100,7 @@
                                     <label class="control-label col-lg-3" for="email">Email</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="email" name="email">
+                                        <input type="text" class="form-control" id="email" name="email" value={{$item['email'] }}>
                                     </div>
                                 </div>
                                 <!-- CompanyName-->
@@ -104,7 +108,7 @@
                                     <label class="control-label col-lg-3" for="company_name">公司名称</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="company_name" name="company_name">
+                                        <input type="text" class="form-control" id="company_name" name="company_name" value={{$item['company_name'] }}>
                                     </div>
                                 </div>
                                 <!-- CompanyAddress-->
@@ -112,7 +116,7 @@
                                     <label class="control-label col-lg-3" for="company_address">公司地址</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="company_address" name="company_address">
+                                        <input type="text" class="form-control" id="company_address" name="company_address" value={{$item['company_address'] }}>
                                     </div>
                                 </div>
                                 <!-- Experience-->
@@ -120,7 +124,7 @@
                                     <label class="control-label col-lg-3" for="experience">工作经历</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="experience" name="experience">
+                                        <input type="text" class="form-control" id="experience" name="experience" value={{$item['experience'] }}>
                                     </div>
                                 </div>
                                 <!-- ProductInfo-->
@@ -128,7 +132,7 @@
                                     <label class="control-label col-lg-3" for="product_info">产品简介</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="product_info" name="product_info">
+                                        <input type="text" class="form-control" id="product_info" name="product_info" value={{$item['product_info'] }}>
                                     </div>
                                 </div>
                                 <!-- SourceInfo-->
@@ -136,7 +140,7 @@
                                     <label class="control-label col-lg-3" for="source_info">所缺资源说明</label>
 
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="source_info" name="source_info">
+                                        <input type="text" class="form-control" id="source_info" name="source_info" value={{$item['source_info'] }}>
                                     </div>
                                 </div>
 
@@ -149,7 +153,7 @@
                                             </label>
                                         </div>
                                         <br>
-                                        <button type="submit" class="btn btn-danger">Register</button>
+                                        <button type="submit" class="btn btn-danger">update</button>
                                         <button type="reset" class="btn btn-success">Reset</button>
                                     </div>
                                 </div>
