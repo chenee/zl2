@@ -58,7 +58,6 @@ Class projectlistController extends Controller
 
         $id = new \MongoId($request->input('id'));
         $ret = $collection->update( array("_id"=>$id),array('$push'=>array("沟通"=>$document)));
-
         $item = $collection->findOne(array('_id'=>$id));
 
         return view('projectlist/detail',['item'=>$item]);
