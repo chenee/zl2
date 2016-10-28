@@ -1,0 +1,35 @@
+use log to debug ! /www/wdlinux/nginx/logs/error.log
+
+
+edit nginx/config/vhost/000.default.conf
+
+    server {
+        server_name  zl2.chenee.cn;
+        root /www/web/default/zl2/public;
+        index index.php index.html index.htm;
+
+        location ~ \.php$ {
+            fastcgi_pass   127.0.0.1:9001;
+            #fastcgi_pass unix:/tmp/php-fpm.sock;
+            fastcgi_index  index.php;
+            include fcgi.conf;
+        }
+
+        #for laravel
+        location / {
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ {
+                expires      30d;
+        }
+
+        location ~ .*\.(js|css)?$ {
+                expires      12h;
+        }
+    }
+
+composer install
+
+php artisan key:generate
+
